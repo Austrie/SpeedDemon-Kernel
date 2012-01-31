@@ -58,7 +58,7 @@
 
 #define MAX_AXI_KHZ 192000
 #define SEMC_ACPU_MIN_UV_MV 500U
-#define SEMC_ACPU_MAX_UV_MV 1525U
+#define SEMC_ACPU_MAX_UV_MV 1600U
 
 struct clock_state {
 	struct clkctl_acpu_speed	*current_speed;
@@ -106,7 +106,10 @@ static struct pll pll2_tbl[] = {
 	{  88, 1, 3, 0 }, /* 1708 MHz */
 	{  93, 1, 3, 0 }, /* 1804 MHz */
 	{  98, 1, 3, 0 }, /* 1900 MHz */
-    { 103, 1, 3, 0 }, /* 2016 MHz */
+    	{ 103, 1, 3, 0 }, /* 2016 MHz */
+	{  93, 1, 3, 0 }, /* 2112 MHz */
+	{  98, 1, 3, 0 }, /* 2208 MHz */
+    { 103, 1, 3, 0 }, /* 2304 MHz */
 };
 
 /* Use negative numbers for sources that can't be enabled/disabled */
@@ -147,6 +150,9 @@ static struct clkctl_acpu_speed acpu_freq_tbl[] = {
 	{ 1, 1804800, PLL_2, 3, 0, UINT_MAX, 1400, VDD_RAW(1400), &pll2_tbl[10]},
 	{ 1, 1900800, PLL_2, 3, 0, UINT_MAX, 1475, VDD_RAW(1475), &pll2_tbl[11]},
 	{ 1, 2016000, PLL_2, 3, 0, UINT_MAX, 1500, VDD_RAW(1500), &pll2_tbl[12]},
+	{ 1, 2112000, PLL_2, 3, 0, UINT_MAX, 1525, VDD_RAW(1525), &pll2_tbl[13]},
+	{ 1, 2208000, PLL_2, 3, 0, UINT_MAX, 1550, VDD_RAW(1550), &pll2_tbl[14]},
+	{ 1, 2304000, PLL_2, 3, 0, UINT_MAX, 1575, VDD_RAW(1600), &pll2_tbl[15]},
 	{ 0 }
 };
 
